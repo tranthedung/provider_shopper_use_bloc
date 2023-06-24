@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/login_page.dart';
+import 'home/ui/home_login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +11,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.teal,
+      ),
       home: LoginHome(),
     );
   }

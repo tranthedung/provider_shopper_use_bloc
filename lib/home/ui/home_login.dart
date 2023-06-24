@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-class LoginHome extends StatelessWidget {
+class LoginHome  extends StatelessWidget {
   const LoginHome({super.key});
 
   @override

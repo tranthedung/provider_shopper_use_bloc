@@ -46,7 +46,12 @@ class ProductTileWidget extends StatelessWidget {
               ),
             ],
           ),
-          IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+          IconButton(
+              onPressed: () {
+                cartBloc
+                    .add(CartAddItemsEvent(clickedProduct: productDataModel));
+              },
+              icon: Icon(Icons.add)),
         ],
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider1/buy/ui/buy.dart';
 import 'package:provider1/cart/bloc/cart_bloc.dart';
+import 'package:provider1/cart/model/cart_product_date.dart';
 import 'package:provider1/cart/ui/product_tile_widget.dart';
 import 'package:provider1/home/bloc/home_bloc.dart';
 
@@ -24,7 +26,10 @@ class _CartState extends State<Cart> {
     return BlocConsumer<CartBloc, CartState>(
       bloc: cartBloc,
       listener: (context, state) {
-        // TODO: implement listener
+        if (state is CartShowItemsToPayState) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Buy()));
+        }
       },
       builder: (context, state) {
         switch (state.runtimeType) {
@@ -41,7 +46,9 @@ class _CartState extends State<Cart> {
                 title: Text("CataLog"),
                 actions: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      cartBloc.add(CartClickToButtonPayEvent());
+                    },
                     icon: Icon(Icons.shopping_basket),
                   ),
                 ],

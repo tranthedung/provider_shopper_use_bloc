@@ -13,3 +13,9 @@ class CartLoadedSuccessState extends CartState {
     required this.products,
   });
 }
+class CartShowItemsToPayState extends CartState{
+}
+class CartAddItemState extends CartState{
+  
+}
+
